@@ -20,7 +20,7 @@ Screw_type = "M3"; //[M3,M2]
 Width = 155;
 
 // What part to generate. Select visual to see in assembled view. 
-What_To_Print = "Visual"; // [All,Hub,Wheelhex,Wheelhex_cap,Axle,Visual]
+What_To_Print = "Hub"; // [All,Hub,Wheelhex,Wheelhex_cap,Axle,Visual]
 
 
 // How much in height the wheel mount should move up+ or down-
@@ -78,7 +78,7 @@ C_M4_DIAMETER_THREAD = 3.8; // size of a hole that a M4 screw will create own th
 C_12MM_BEARING_D = 12+b_12mm_tol; // Size of a hole that hold a 12mm bearing
 C_12MM_BEARING_H = 3.5;
 
-    b_tol = 0.3; // tolerance for bearing 
+    b_tol = 0.6; // tolerance for bearing 
 
 //MR128-2RS bearing
 C_BEARING_D = Bearing_Diameter+b_tol; // Size of a hole that hold a bearing
@@ -96,7 +96,7 @@ C_BEARING_INSIDE = Bearing_Inner_Diameter; // Inside diameter of bearing
 
 C_WHEEL_HEX = 13.9; // The hex that the rims mount to
 
-C_WHEEL_AXLE = C_BEARING_INSIDE - 0.1; // Axle that goes through the 5mm hole in the bearings
+C_WHEEL_AXLE = C_BEARING_INSIDE - 0.3; // Axle that goes through the 5mm hole in the bearings
 
 // ############# Code ################
 
@@ -169,6 +169,8 @@ module hub() {
         translate([0,0,-1]) cylinder(d=C_BEARING_D, h=C_BEARING_H+1);
         translate([0,0,C_BEARING_H + hub_middle_gap]) cylinder(d=C_BEARING_D, h=C_BEARING_H+1);
         translate([0,0,0]) cylinder(d=C_BEARING_D-1, h=C_BEARING_H*2+hub_middle_gap+1);
+        //Elephant foot
+        translate([0,0,0]) cylinder(d1=C_BEARING_D+1,d2=C_BEARING_D, h=C_BEARING_H/3);
         
         // Holes for mounting
         hub_screws();
