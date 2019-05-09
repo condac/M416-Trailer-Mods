@@ -1,8 +1,5 @@
 //
 
-if (banan == 1) {
-    echo("banan");
-}
 // Parameters in Customizer
 
 // Recomended is the 8x12x3.5 also known as MR128-2RS
@@ -20,7 +17,7 @@ Screw_type = "M3"; //[M3,M2]
 Width = 155;
 
 // What part to generate. Select visual to see in assembled view. 
-What_To_Print = "Hub"; // [All,Hub,Wheelhex,Wheelhex_cap,Axle,Visual]
+What_To_Print = "Visual"; // [All,Hub,Wheelhex,Wheelhex_cap,Axle,Visual]
 
 
 // How much in height the wheel mount should move up+ or down-
